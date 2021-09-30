@@ -35,10 +35,13 @@ const postUser = (req, res) => {
               expiresIn: "30m"
             })
             res.status(200).send({
-              username: results.rows[0].username,
-              mensagem: 'Autenticado com sucesso',
-              token: token,
-
+              user: {
+                id: results.rows[0].id_user,
+                username: results.rows[0].username,
+                activated: results.rows[0].activated,
+              },
+              access_token: token,
+              
             })
         }
         
