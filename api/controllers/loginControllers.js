@@ -23,7 +23,7 @@ const postUser = (req, res) => {
         if (error) {
           throw error
         } else if(results.rowCount == 0){
-          res.status(404).send({mensagem: 'Acesso Negado'});
+          res.status(404).send({message: 'Acesso Negado'});
         } else{
             
             let token = jwt.sign({

@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const app = express()
 const loginDb = require('./controllers/loginControllers')
 const companiesDb = require('./controllers/companyControllers')
+const registerDb = require('./controllers/registerControllers')
 
 const port = 3012
 const autenticacao = require('./middleware/login')
@@ -50,7 +51,8 @@ app.post('/login', loginDb.postUser)
 //Rotas Companies
 app.get('/companies', autenticacao.obrigatorio, companiesDb.getCompany)
 
-
+//Rotas Companies
+app.post('/register', registerDb.postRegister)
 
 
 

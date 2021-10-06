@@ -9,31 +9,44 @@ class WelcomeView extends GetView<WelcomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('WelcomePage')),
       body: Background(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const Text(
-                "WELCOME TO EDU",
+                "Bem vindo ao Barber App",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               SizedBox(height: Get.height * 0.05),
+              // Container(
+              //   margin: EdgeInsets.all(100),
+              //   decoration: const BoxDecoration(
+              //     image: DecorationImage(
+              //       image: AssetImage("assets/splash.png"),
+              //       fit: BoxFit.contain,
+              //     ),
+              //   ),
+              // ),
               SvgPicture.asset(
+                // "assets/splash.jpg",
                 "assets/chat.svg",
                 height: Get.height * 0.45,
               ),
               SizedBox(height: Get.height * 0.05),
               RoundedButton(
                 text: "LOGIN",
-                press: () {},
+                press: () {
+                  Get.offAndToNamed("/login");
+                },
               ),
               RoundedButton(
-                text: "SIGN UP",
+                text: "REGISTRAR",
                 color: Get.theme.primaryColorLight,
                 textColor: Colors.black,
-                press: () {},
+                press: () {
+                  Get.offAndToNamed("/signup");
+                },
               ),
             ],
           ),

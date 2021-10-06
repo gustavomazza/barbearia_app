@@ -1,5 +1,4 @@
 import 'package:barbearia_app/app/modules/initial/initial_controller.dart';
-import 'package:barbearia_app/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:splashscreen/splashscreen.dart';
@@ -21,7 +20,7 @@ class InitialView extends GetView<InitialController> {
           //     Color(0xff93291E),
           //   ],
           // ),
-          navigateAfterSeconds: Routes.WELCOME,
+          navigateAfterSeconds: controller.verifyAuth(),
           loaderColor: Colors.transparent,
         ),
         Container(
